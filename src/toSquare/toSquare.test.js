@@ -7,6 +7,12 @@ describe('Func: toSquare', () => {
 		expect(spyMathPow).toBeCalledTimes(1)
 	})
 
+	test('should square value = 1', () => {
+		const spyMathPow = jest.spyOn(Math, 'pow')
+		toSquare(1)
+		expect(spyMathPow).toBeCalledTimes(0)
+	})
+
 	test('should square incorrect value', () => {
 		expect(toSquare('a')).toEqual(NaN)
 	})
@@ -16,5 +22,9 @@ describe('Func: toSquare', () => {
 		expect(toSquare(2)).toBeLessThan(5)
 		expect(toSquare(2)).toBeGreaterThan(3)
 		expect(toSquare(2)).not.toBeUndefined()
+	})
+
+	afterEach(() => {
+		jest.clearAllMocks()
 	})
 })
