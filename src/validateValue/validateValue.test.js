@@ -13,11 +13,11 @@ describe('Func: validateValue', () => {
 		expect(validateValue(100)).toBe(true)
 	})
 
-	test('should validate lower uncorrect value', () => {
+	test('should validate lower incorrect value', () => {
 		expect(validateValue(-1)).toBe(false)
 	})
 
-	test('should validate upper uncorrect value', () => {
+	test('should validate upper incorrect value', () => {
 		expect(validateValue(101)).toBe(false)
 	})
 })
