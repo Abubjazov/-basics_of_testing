@@ -2,7 +2,9 @@ const toSquare = require('./toSquare')
 
 describe('Func: toSquare', () => {
 	test('should square correct value', () => {
-		expect(toSquare(3)).toEqual(9)
+		const spyMathPow = jest.spyOn(Math, 'pow')
+		toSquare(2)
+		expect(spyMathPow).toBeCalledTimes(1)
 	})
 
 	test('should square incorrect value', () => {
